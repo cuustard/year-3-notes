@@ -1,0 +1,134 @@
+/* Hide Starlight's right-hand "On this page" sidebar */
+.right-sidebar {
+	display: none !important;
+}
+
+/* Wider Starlight content allowance */
+:root {
+	--sl-content-width: 90rem;
+}
+
+/* Let the content container use the available space */
+.content-panel {
+	display: block !important;
+}
+
+.content-panel > .sl-container {
+	max-width: none !important;
+}
+
+/* Visually centre the article area between the left sidebar and right edge */
+.content-panel h1,
+.sl-markdown-content,
+.pagination-links,
+.prev-next-links {
+	width: min(82rem, calc(100vw - 32rem)) !important;
+	max-width: none !important;
+	margin-left: calc((100vw - 16rem - min(82rem, calc(100vw - 32rem))) / 2) !important;
+	margin-right: 0 !important;
+}
+
+/* Section heading spacing */
+.sl-markdown-content h2 {
+	clear: both;
+	margin-top: 4rem;
+}
+
+/* Slide image paragraph becomes the right column */
+.sl-markdown-content > p:has(> img[src*="/slides/"]) {
+	float: right !important;
+	width: min(54%, 42rem) !important;
+	max-width: none !important;
+	margin: 0 0 3rem 3.5rem !important;
+}
+
+/* Slide image itself */
+.sl-markdown-content > p:has(> img[src*="/slides/"]) > img {
+	width: 100% !important;
+	max-width: none !important;
+	height: auto !important;
+	display: block !important;
+	border-radius: 0.75rem;
+	background: white;
+	box-shadow: 0 18px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Keep normal note content in the left column */
+.sl-markdown-content > p:not(:has(> img[src*="/slides/"])),
+.sl-markdown-content > ul,
+.sl-markdown-content > ol,
+.sl-markdown-content > table,
+.sl-markdown-content > blockquote,
+.sl-markdown-content > .starlight-aside {
+	width: min(42%, 36rem) !important;
+	max-width: min(42%, 36rem) !important;
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+}
+
+/* Code block wrapper: keep copy button attached to the block */
+.sl-markdown-content > .expressive-code {
+	width: min(42%, 36rem) !important;
+	max-width: min(42%, 36rem) !important;
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+	position: relative !important;
+}
+
+/* Keep the internal code frame constrained too */
+.sl-markdown-content > .expressive-code .frame,
+.sl-markdown-content > .expressive-code pre {
+	max-width: 100% !important;
+	overflow-x: auto !important;
+}
+
+/* Move the copy button back onto the visible code block */
+.sl-markdown-content > .expressive-code button,
+.sl-markdown-content > .expressive-code .copy {
+	position: absolute !important;
+	top: 0.5rem !important;
+	right: 0.5rem !important;
+}
+
+/* Tables and raw pre blocks stay usable inside the left column */
+.sl-markdown-content > table,
+.sl-markdown-content > pre {
+	overflow-x: auto !important;
+}
+
+/* Keep previous/next below floated slides */
+.pagination-links,
+.prev-next-links,
+footer {
+	clear: both !important;
+}
+
+/* Mobile/tablet fallback */
+@media (max-width: 900px) {
+	.content-panel h1,
+	.sl-markdown-content,
+	.pagination-links,
+	.prev-next-links {
+		width: 100% !important;
+		margin-left: 0 !important;
+	}
+
+	.sl-markdown-content > p:has(> img[src*="/slides/"]) {
+		float: none !important;
+		width: 100% !important;
+		margin: 1.5rem 0 4rem !important;
+	}
+
+	.sl-markdown-content > p:not(:has(> img[src*="/slides/"])),
+	.sl-markdown-content > ul,
+	.sl-markdown-content > ol,
+	.sl-markdown-content > table,
+	.sl-markdown-content > pre,
+	.sl-markdown-content > blockquote,
+	.sl-markdown-content > .expressive-code,
+	.sl-markdown-content > .starlight-aside,
+	.sl-markdown-content > .expressive-code pre {
+		width: 100% !important;
+		max-width: 100% !important;
+	}
+}
