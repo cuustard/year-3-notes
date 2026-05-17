@@ -29,13 +29,31 @@
 }
 
 /* Section heading spacing */
-.sl-markdown-content h2 {
-	clear: both;
-	margin-top: 4rem;
+.sl-markdown-content > h2,
+.sl-markdown-content > h3 {
+	clear: both !important;
+	display: block !important;
+	margin-top: 4.5rem;
+}
+
+/* Invisible section divider.
+   Use --- in Markdown between sections when the previous section has multiple slides. */
+.sl-markdown-content > hr {
+	clear: both !important;
+	display: block !important;
+	border: 0 !important;
+	height: 0 !important;
+	margin: 4.5rem 0 0 !important;
+	padding: 0 !important;
+}
+
+/* Reduce extra space for the first section heading */
+.sl-markdown-content > h2:first-of-type {
+	margin-top: 2.5rem;
 }
 
 /* Slide image paragraph becomes the right column */
-.sl-markdown-content > p:has(> img[src*="/slides/"]) {
+.sl-markdown-content p:has(> img[src*="/slides/"]) {
 	float: right !important;
 	width: min(54%, 42rem) !important;
 	max-width: none !important;
@@ -43,7 +61,7 @@
 }
 
 /* Slide image itself */
-.sl-markdown-content > p:has(> img[src*="/slides/"]) > img {
+.sl-markdown-content p:has(> img[src*="/slides/"]) > img {
 	width: 100% !important;
 	max-width: none !important;
 	height: auto !important;
@@ -367,7 +385,7 @@
 	color: rgb(226, 232, 240) !important;
 }
 
-/* Keep previous/next below floated slides */
+/* Keep previous/next below all floated slides */
 .pagination-links,
 .prev-next-links,
 footer {
@@ -384,7 +402,7 @@ footer {
 		margin-left: 0 !important;
 	}
 
-	.sl-markdown-content > p:has(> img[src*="/slides/"]) {
+	.sl-markdown-content p:has(> img[src*="/slides/"]) {
 		float: none !important;
 		width: 100% !important;
 		margin: 1.5rem 0 4rem !important;

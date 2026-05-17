@@ -8,7 +8,7 @@ description: Slide-adjacent notes prototype.
 > This lecture establishes the mental model for SCC.213: web applications are built from interacting client-side, server-side, and database components. The Web is only one service running over the wider Internet, usually using HTTP/HTTPS. A web application must be understood as a request/response system, but later lectures extend this model with AJAX, REST-style APIs, databases, and WebSockets.
 
 ## Internet vs Web
-![Relevant slide: 6](/year-3-notes/slides/server-side-web/L02/slide-06.png)
+![Relevant slide: 6](/year-3-notes/slides/server-side-web/L02/a.ModuleIntroduction_WebArchitecture-02.png)
 
 > [!DEFINITION]
 > **Internet:** the broader global network infrastructure that supports many applications and protocols.
@@ -19,8 +19,8 @@ A common exam trap is treating the Internet and the Web as the same thing. In SC
 
 ## Web Application Architecture
 
-![Relevant slide: 6](/year-3-notes/slides/server-side-web/L02/slide-12.png)
-![Relevant slide: 6](/year-3-notes/slides/server-side-web/L02/slide-20.png)
+![Relevant slide: 6](/year-3-notes/slides/server-side-web/L02/a.ModuleIntroduction_WebArchitecture-03.png)
+![Relevant slide: 6](/year-3-notes/slides/server-side-web/L02/a.ModuleIntroduction_WebArchitecture-04.png)
 
 > [!DEFINITION]
 > **Web application architecture** is the framework defining interactions between the user interface, server logic, and databases. It affects performance, scalability, and security.
@@ -41,7 +41,10 @@ flowchart LR
   Browser --> User
 ```
 
+---
 ## Client-Server Model
+
+![Relevant slide: 6](/year-3-notes/slides/server-side-web/L02/a.ModuleIntroduction_WebArchitecture-05.png)
 
 > [!DEFINITION]
 > **Client-server model:** a client requests data or services; the server processes the request and returns an appropriate response.
@@ -66,6 +69,8 @@ sequenceDiagram
 
 ## URLs and Web Objects
 
+![Relevant slide: 6](/year-3-notes/slides/server-side-web/L02/a.ModuleIntroduction_WebArchitecture-11.png)
+
 A web page consists of **objects**. An object can be an HTML file, JPEG image, video, audio file, CSS file, or JavaScript file. A web page normally has a base HTML file that references additional objects.
 
 A URL identifies an object, for example:
@@ -79,7 +84,10 @@ This can be understood as:
 - `www.clevername.com` = host name
 - `/someDept/pic.gif` = server-specific path
 
+---
 ## DNS
+
+![Relevant slide: 6](/year-3-notes/slides/server-side-web/L02/a.ModuleIntroduction_WebArchitecture-12.png)
 
 > [!DEFINITION]
 > **DNS (Domain Name System)** is a distributed database used to map domain names to IP addresses.
@@ -96,10 +104,11 @@ sequenceDiagram
   Browser->>Server: HTTP request to IP address
   Server-->>Browser: HTTP response
 ```
-
+---
 ## Types of Web Application Architecture
-
 ### Multi-Page Applications (MPA)
+
+![Relevant slide: 6](/year-3-notes/slides/server-side-web/L02/a.ModuleIntroduction_WebArchitecture-07.png)
 
 > [!DEFINITION]
 > **MPA:** a web application where different pages are loaded separately from the server.
@@ -107,16 +116,17 @@ sequenceDiagram
 In an MPA, navigating to a new page usually sends a new request and causes a full page reload.
 
 Advantages:
-
 - Better for SEO in many traditional cases.
 - Easier to maintain for some kinds of applications.
 
 Disadvantages:
-
 - More server load.
 - Slower navigation because each page change involves a new page load.
 
+---
 ### Single Page Applications (SPA)
+
+![Relevant slide: 6](/year-3-notes/slides/server-side-web/L02/a.ModuleIntroduction_WebArchitecture-08.png)
 
 > [!DEFINITION]
 > **SPA:** a web application where the front-end is loaded initially and later interactions update content without full page reloads.
@@ -144,15 +154,24 @@ sequenceDiagram
   Browser->>Browser: Update page without full reload
 ```
 
+---
 ### Monolithic Architecture
+
+![Relevant slide: 6](/year-3-notes/slides/server-side-web/L02/a.ModuleIntroduction_WebArchitecture-09.png)
 
 A monolithic architecture is a single indivisible unit where components are tightly coupled. It is simpler to develop and debug for small applications, but it can become harder to scale, update, and maintain.
 
+---
 ### Microservices Architecture
+
+![Relevant slide: 6](/year-3-notes/slides/server-side-web/L02/a.ModuleIntroduction_WebArchitecture-10.png)
 
 Microservices split an application into small independent services that communicate through APIs. This supports scalability and technology flexibility but introduces complexity in deployment and management.
 
+---
 ## Front-End Technologies
+
+![Relevant slide: 6](/year-3-notes/slides/server-side-web/L02/a.ModuleIntroduction_WebArchitecture-13.png)
 
 - **HTML:** structures page content.
 - **CSS:** styles and visually formats the content.
@@ -161,15 +180,19 @@ Microservices split an application into small independent services that communic
 
 For HTML/CSS details, see [[Web Standards]]. For React, see [[JavaScript Promises, DOM Interactivity and React Basics#React]].
 
+---
 ## Back-End Technologies
+
+![Relevant slide: 6](/year-3-notes/slides/server-side-web/L02/a.ModuleIntroduction_WebArchitecture-14.png)
 
 - **Server-side languages:** Node.js, Python, Ruby, Java.
 - **Web servers:** Apache, Nginx, Node.js-based servers.
 - **APIs:** RESTful services allow communication between front-end and back-end.
 
-Runtime:: Node.js
-
+---
 ## RESTful API Architecture
+
+![Relevant slide: 6](/year-3-notes/slides/server-side-web/L02/a.ModuleIntroduction_WebArchitecture-16.png)
 
 > [!DEFINITION]
 > **RESTful API architecture:** an architectural style for designing networked applications using stateless, resource-based interactions and HTTP methods such as GET, POST, PUT, and DELETE.
@@ -182,9 +205,10 @@ http://localhost:8080/customer/{id}
 
 The important SCC.213 point is that the front-end and back-end communicate through resource-oriented requests, typically using HTTP methods.
 
+---
 ## Databases and CRUD
 
-Database_Concept:: CRUD
+![Relevant slide: 6](/year-3-notes/slides/server-side-web/L02/a.ModuleIntroduction_WebArchitecture-15.png)
 
 CRUD means:
 
@@ -195,7 +219,13 @@ CRUD means:
 
 SQL databases store structured relational data. NoSQL databases store data in more flexible non-relational forms. SCC.213 later focuses on SQL/SQLite in [[Server-Side JavaScript - Files, Express Static Serving and SQLite#SQLite]].
 
+---
 ## Deployment Choices
+
+![Relevant slide: 6](/year-3-notes/slides/server-side-web/L02/a.ModuleIntroduction_WebArchitecture-17.png)
+![Relevant slide: 6](/year-3-notes/slides/server-side-web/L02/a.ModuleIntroduction_WebArchitecture-18.png)
+![Relevant slide: 6](/year-3-notes/slides/server-side-web/L02/a.ModuleIntroduction_WebArchitecture-19.png)
+![Relevant slide: 6](/year-3-notes/slides/server-side-web/L02/a.ModuleIntroduction_WebArchitecture-20.png)
 
 > [!DEFINITION]
 > **Deployment:** making an application available for use on a server.
@@ -212,7 +242,10 @@ Deployment models:
 - **Cloud-based:** hosted using cloud services, supporting scalability and lower operational overhead.
 - **Hybrid:** combination of on-premises and cloud resources.
 
+---
 ## Cloud Service Layers
+
+![Relevant slide: 6](/year-3-notes/slides/server-side-web/L02/a.ModuleIntroduction_WebArchitecture-21.png)
 
 The lecture uses the usual split between what the user manages and what the provider manages:
 
@@ -221,7 +254,13 @@ The lecture uses the usual split between what the user manages and what the prov
 - **PaaS:** provider also manages OS, middleware, runtime.
 - **SaaS:** provider manages nearly everything; user mainly consumes the application.
 
+---
 ## Performance Metrics
+
+![Relevant slide: 6](/year-3-notes/slides/server-side-web/L02/a.ModuleIntroduction_WebArchitecture-22.png)
+![Relevant slide: 6](/year-3-notes/slides/server-side-web/L02/a.ModuleIntroduction_WebArchitecture-23.png)
+![Relevant slide: 6](/year-3-notes/slides/server-side-web/L02/a.ModuleIntroduction_WebArchitecture-24.png)
+![Relevant slide: 6](/year-3-notes/slides/server-side-web/L02/a.ModuleIntroduction_WebArchitecture-26.png)
 
 Performance-related definitions from the lecture:
 
@@ -239,7 +278,14 @@ Other metrics include error rate, resource utilisation, availability, and securi
 
 When distributions have a long right tail, the **median** may better characterise performance than the mean.
 
+---
 ## Scalability and Performance
+
+![Relevant slide: 6](/year-3-notes/slides/server-side-web/L02/a.ModuleIntroduction_WebArchitecture-28.png)
+![Relevant slide: 6](/year-3-notes/slides/server-side-web/L02/a.ModuleIntroduction_WebArchitecture-32.png)
+![Relevant slide: 6](/year-3-notes/slides/server-side-web/L02/a.ModuleIntroduction_WebArchitecture-33.png)
+![Relevant slide: 6](/year-3-notes/slides/server-side-web/L02/a.ModuleIntroduction_WebArchitecture-34.png)
+![Relevant slide: 6](/year-3-notes/slides/server-side-web/L02/a.ModuleIntroduction_WebArchitecture-35.png)
 
 > [!DEFINITION]
 > **Scalability:** the ability of an application to handle increasing load while maintaining performance goals.
@@ -248,7 +294,12 @@ When distributions have a long right tail, the **median** may better characteris
 - **Horizontal scaling:** adding more machines to handle load.
 - **Performance optimisation:** includes caching and load balancing.
 
+---
 ## Caching and CDNs
+
+![Relevant slide: 6](/year-3-notes/slides/server-side-web/L02/a.ModuleIntroduction_WebArchitecture-29.png)
+![Relevant slide: 6](/year-3-notes/slides/server-side-web/L02/a.ModuleIntroduction_WebArchitecture-30.png)
+![Relevant slide: 6](/year-3-notes/slides/server-side-web/L02/a.ModuleIntroduction_WebArchitecture-31.png)
 
 Caching exploits locality by moving content closer to the user. This reduces hops, latency, transport cost, and network congestion.
 
@@ -262,6 +313,7 @@ Caching can happen:
 > [!DEFINITION]
 > **CDN (Content Delivery Network):** a system that caches content on servers closer to users.
 
+---
 ## Exam Focus
 
 - Distinguish the Internet from the Web.
