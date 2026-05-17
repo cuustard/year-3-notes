@@ -4,6 +4,8 @@ import starlight from '@astrojs/starlight';
 
 // https://astro.build/config
 export default defineConfig({
+	site: 'https://cuustard.github.io',
+	base: '/year-3-notes',
 	integrations: [
 		starlight({
 			title: 'SCC Year 3 Notes',
@@ -12,7 +14,7 @@ export default defineConfig({
 				{
 					icon: 'github',
 					label: 'GitHub',
-					href: 'https://github.com/withastro/starlight',
+					href: 'https://github.com/cuustard/year-3-notes',
 				},
 			],
 			sidebar: [
