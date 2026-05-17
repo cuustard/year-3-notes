@@ -96,6 +96,277 @@
 	overflow-x: auto !important;
 }
 
+/* Mermaid diagrams */
+.sl-markdown-content .mermaid,
+.sl-markdown-content pre.mermaid,
+.sl-markdown-content div.mermaid {
+	width: min(42%, 36rem) !important;
+	max-width: min(42%, 36rem) !important;
+	margin: 1.5rem 0 2rem !important;
+	padding: 1rem !important;
+	border: 1px solid rgba(148, 163, 184, 0.22) !important;
+	border-radius: 0.75rem !important;
+	background: rgba(15, 23, 42, 0.38) !important;
+	overflow-x: auto !important;
+}
+
+.sl-markdown-content .mermaid svg {
+	display: block !important;
+	max-width: 100% !important;
+	height: auto !important;
+	margin: 0 auto !important;
+}
+
+/* Base callout card */
+.sl-markdown-content [data-callout],
+.sl-markdown-content [data-callout-type],
+.sl-markdown-content .callout {
+	width: min(42%, 36rem) !important;
+	max-width: min(42%, 36rem) !important;
+	margin: 1.25rem 0 1.5rem !important;
+	padding: 1rem 1.1rem !important;
+	border-radius: 0.75rem !important;
+	border: 1px solid rgba(148, 163, 184, 0.3) !important;
+	border-left: 5px solid rgb(148, 163, 184) !important;
+	background: rgba(30, 41, 59, 0.75) !important;
+	box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18) !important;
+}
+
+/* Callout title */
+[data-callout-title],
+.callout-title {
+	display: flex !important;
+	align-items: center !important;
+	gap: 0.5rem !important;
+	margin-bottom: 0.6rem !important;
+	font-weight: 700 !important;
+	color: rgb(203, 213, 225) !important;
+}
+
+[data-callout-title]::before,
+.callout-title::before {
+	content: "▣";
+	font-size: 0.85rem;
+}
+
+/* Callout body spacing */
+[data-callout-body] > :first-child,
+.callout-content > :first-child {
+	margin-top: 0;
+}
+
+[data-callout-body] > :last-child,
+.callout-content > :last-child {
+	margin-bottom: 0;
+}
+
+/* ABSTRACT / SUMMARY / TLDR — teal */
+.sl-markdown-content [data-callout="abstract" i],
+.sl-markdown-content [data-callout="summary" i],
+.sl-markdown-content [data-callout="tldr" i],
+.sl-markdown-content [data-callout-type="abstract" i],
+.sl-markdown-content [data-callout-type="summary" i],
+.sl-markdown-content [data-callout-type="tldr" i],
+.sl-markdown-content .callout.abstract,
+.sl-markdown-content .callout.summary,
+.sl-markdown-content .callout.tldr {
+	border-color: rgba(45, 212, 191, 0.55) !important;
+	border-left-color: rgb(45, 212, 191) !important;
+	background: rgba(13, 148, 136, 0.38) !important;
+}
+
+.sl-markdown-content [data-callout="abstract" i] [data-callout-title],
+.sl-markdown-content [data-callout="summary" i] [data-callout-title],
+.sl-markdown-content [data-callout="tldr" i] [data-callout-title],
+.sl-markdown-content [data-callout-type="abstract" i] [data-callout-title],
+.sl-markdown-content [data-callout-type="summary" i] [data-callout-title],
+.sl-markdown-content [data-callout-type="tldr" i] [data-callout-title],
+.sl-markdown-content .callout.abstract .callout-title,
+.sl-markdown-content .callout.summary .callout-title,
+.sl-markdown-content .callout.tldr .callout-title {
+	color: rgb(94, 234, 212) !important;
+}
+
+/* DEFINITION / INFO / NOTE — blue */
+.sl-markdown-content [data-callout="definition" i],
+.sl-markdown-content [data-callout="info" i],
+.sl-markdown-content [data-callout="note" i],
+.sl-markdown-content [data-callout-type="definition" i],
+.sl-markdown-content [data-callout-type="info" i],
+.sl-markdown-content [data-callout-type="note" i],
+.sl-markdown-content .callout.definition,
+.sl-markdown-content .callout.info,
+.sl-markdown-content .callout.note {
+	border-color: rgba(96, 165, 250, 0.55) !important;
+	border-left-color: rgb(96, 165, 250) !important;
+	background: rgba(30, 64, 175, 0.38) !important;
+}
+
+.sl-markdown-content [data-callout="definition" i] [data-callout-title],
+.sl-markdown-content [data-callout="info" i] [data-callout-title],
+.sl-markdown-content [data-callout="note" i] [data-callout-title],
+.sl-markdown-content [data-callout-type="definition" i] [data-callout-title],
+.sl-markdown-content [data-callout-type="info" i] [data-callout-title],
+.sl-markdown-content [data-callout-type="note" i] [data-callout-title],
+.sl-markdown-content .callout.definition .callout-title,
+.sl-markdown-content .callout.info .callout-title,
+.sl-markdown-content .callout.note .callout-title {
+	color: rgb(147, 197, 253) !important;
+}
+
+/* TIP / EXAMPLE / SUCCESS — green */
+.sl-markdown-content [data-callout="tip" i],
+.sl-markdown-content [data-callout="example" i],
+.sl-markdown-content [data-callout="success" i],
+.sl-markdown-content [data-callout="check" i],
+.sl-markdown-content [data-callout="done" i],
+.sl-markdown-content [data-callout-type="tip" i],
+.sl-markdown-content [data-callout-type="example" i],
+.sl-markdown-content [data-callout-type="success" i],
+.sl-markdown-content [data-callout-type="check" i],
+.sl-markdown-content [data-callout-type="done" i],
+.sl-markdown-content .callout.tip,
+.sl-markdown-content .callout.example,
+.sl-markdown-content .callout.success,
+.sl-markdown-content .callout.check,
+.sl-markdown-content .callout.done {
+	border-color: rgba(74, 222, 128, 0.55) !important;
+	border-left-color: rgb(74, 222, 128) !important;
+	background: rgba(21, 128, 61, 0.38) !important;
+}
+
+.sl-markdown-content [data-callout="tip" i] [data-callout-title],
+.sl-markdown-content [data-callout="example" i] [data-callout-title],
+.sl-markdown-content [data-callout="success" i] [data-callout-title],
+.sl-markdown-content [data-callout="check" i] [data-callout-title],
+.sl-markdown-content [data-callout="done" i] [data-callout-title],
+.sl-markdown-content [data-callout-type="tip" i] [data-callout-title],
+.sl-markdown-content [data-callout-type="example" i] [data-callout-title],
+.sl-markdown-content [data-callout-type="success" i] [data-callout-title],
+.sl-markdown-content [data-callout-type="check" i] [data-callout-title],
+.sl-markdown-content [data-callout-type="done" i] [data-callout-title],
+.sl-markdown-content .callout.tip .callout-title,
+.sl-markdown-content .callout.example .callout-title,
+.sl-markdown-content .callout.success .callout-title,
+.sl-markdown-content .callout.check .callout-title,
+.sl-markdown-content .callout.done .callout-title {
+	color: rgb(134, 239, 172) !important;
+}
+
+/* QUESTION / HELP / FAQ — purple */
+.sl-markdown-content [data-callout="question" i],
+.sl-markdown-content [data-callout="help" i],
+.sl-markdown-content [data-callout="faq" i],
+.sl-markdown-content [data-callout-type="question" i],
+.sl-markdown-content [data-callout-type="help" i],
+.sl-markdown-content [data-callout-type="faq" i],
+.sl-markdown-content .callout.question,
+.sl-markdown-content .callout.help,
+.sl-markdown-content .callout.faq {
+	border-color: rgba(168, 85, 247, 0.55) !important;
+	border-left-color: rgb(168, 85, 247) !important;
+	background: rgba(107, 33, 168, 0.38) !important;
+}
+
+.sl-markdown-content [data-callout="question" i] [data-callout-title],
+.sl-markdown-content [data-callout="help" i] [data-callout-title],
+.sl-markdown-content [data-callout="faq" i] [data-callout-title],
+.sl-markdown-content [data-callout-type="question" i] [data-callout-title],
+.sl-markdown-content [data-callout-type="help" i] [data-callout-title],
+.sl-markdown-content [data-callout-type="faq" i] [data-callout-title],
+.sl-markdown-content .callout.question .callout-title,
+.sl-markdown-content .callout.help .callout-title,
+.sl-markdown-content .callout.faq .callout-title {
+	color: rgb(216, 180, 254) !important;
+}
+
+/* WARNING / CAUTION / ATTENTION — amber */
+.sl-markdown-content [data-callout="warning" i],
+.sl-markdown-content [data-callout="caution" i],
+.sl-markdown-content [data-callout="attention" i],
+.sl-markdown-content [data-callout-type="warning" i],
+.sl-markdown-content [data-callout-type="caution" i],
+.sl-markdown-content [data-callout-type="attention" i],
+.sl-markdown-content .callout.warning,
+.sl-markdown-content .callout.caution,
+.sl-markdown-content .callout.attention {
+	border-color: rgba(245, 158, 11, 0.6) !important;
+	border-left-color: rgb(245, 158, 11) !important;
+	background: rgba(146, 64, 14, 0.42) !important;
+}
+
+.sl-markdown-content [data-callout="warning" i] [data-callout-title],
+.sl-markdown-content [data-callout="caution" i] [data-callout-title],
+.sl-markdown-content [data-callout="attention" i] [data-callout-title],
+.sl-markdown-content [data-callout-type="warning" i] [data-callout-title],
+.sl-markdown-content [data-callout-type="caution" i] [data-callout-title],
+.sl-markdown-content [data-callout-type="attention" i] [data-callout-title],
+.sl-markdown-content .callout.warning .callout-title,
+.sl-markdown-content .callout.caution .callout-title,
+.sl-markdown-content .callout.attention .callout-title {
+	color: rgb(252, 211, 77) !important;
+}
+
+/* DANGER / ERROR / FAILURE — red */
+.sl-markdown-content [data-callout="danger" i],
+.sl-markdown-content [data-callout="error" i],
+.sl-markdown-content [data-callout="failure" i],
+.sl-markdown-content [data-callout="fail" i],
+.sl-markdown-content [data-callout="missing" i],
+.sl-markdown-content [data-callout-type="danger" i],
+.sl-markdown-content [data-callout-type="error" i],
+.sl-markdown-content [data-callout-type="failure" i],
+.sl-markdown-content [data-callout-type="fail" i],
+.sl-markdown-content [data-callout-type="missing" i],
+.sl-markdown-content .callout.danger,
+.sl-markdown-content .callout.error,
+.sl-markdown-content .callout.failure,
+.sl-markdown-content .callout.fail,
+.sl-markdown-content .callout.missing {
+	border-color: rgba(239, 68, 68, 0.6) !important;
+	border-left-color: rgb(239, 68, 68) !important;
+	background: rgba(127, 29, 29, 0.45) !important;
+}
+
+.sl-markdown-content [data-callout="danger" i] [data-callout-title],
+.sl-markdown-content [data-callout="error" i] [data-callout-title],
+.sl-markdown-content [data-callout="failure" i] [data-callout-title],
+.sl-markdown-content [data-callout="fail" i] [data-callout-title],
+.sl-markdown-content [data-callout="missing" i] [data-callout-title],
+.sl-markdown-content [data-callout-type="danger" i] [data-callout-title],
+.sl-markdown-content [data-callout-type="error" i] [data-callout-title],
+.sl-markdown-content [data-callout-type="failure" i] [data-callout-title],
+.sl-markdown-content [data-callout-type="fail" i] [data-callout-title],
+.sl-markdown-content [data-callout-type="missing" i] [data-callout-title],
+.sl-markdown-content .callout.danger .callout-title,
+.sl-markdown-content .callout.error .callout-title,
+.sl-markdown-content .callout.failure .callout-title,
+.sl-markdown-content .callout.fail .callout-title,
+.sl-markdown-content .callout.missing .callout-title {
+	color: rgb(252, 165, 165) !important;
+}
+
+/* QUOTE / CITE — grey */
+.sl-markdown-content [data-callout="quote" i],
+.sl-markdown-content [data-callout="cite" i],
+.sl-markdown-content [data-callout-type="quote" i],
+.sl-markdown-content [data-callout-type="cite" i],
+.sl-markdown-content .callout.quote,
+.sl-markdown-content .callout.cite {
+	border-color: rgba(203, 213, 225, 0.4) !important;
+	border-left-color: rgb(203, 213, 225) !important;
+	background: rgba(71, 85, 105, 0.4) !important;
+}
+
+.sl-markdown-content [data-callout="quote" i] [data-callout-title],
+.sl-markdown-content [data-callout="cite" i] [data-callout-title],
+.sl-markdown-content [data-callout-type="quote" i] [data-callout-title],
+.sl-markdown-content [data-callout-type="cite" i] [data-callout-title],
+.sl-markdown-content .callout.quote .callout-title,
+.sl-markdown-content .callout.cite .callout-title {
+	color: rgb(226, 232, 240) !important;
+}
+
 /* Keep previous/next below floated slides */
 .pagination-links,
 .prev-next-links,
@@ -127,7 +398,13 @@ footer {
 	.sl-markdown-content > blockquote,
 	.sl-markdown-content > .expressive-code,
 	.sl-markdown-content > .starlight-aside,
-	.sl-markdown-content > .expressive-code pre {
+	.sl-markdown-content > .expressive-code pre,
+	.sl-markdown-content [data-callout],
+	.sl-markdown-content [data-callout-type],
+	.sl-markdown-content .callout,
+	.sl-markdown-content .mermaid,
+	.sl-markdown-content pre.mermaid,
+	.sl-markdown-content div.mermaid {
 		width: 100% !important;
 		max-width: 100% !important;
 	}
